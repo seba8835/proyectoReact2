@@ -1,17 +1,17 @@
 import "./Item.css"
 import "bulma/css/bulma.css";
 
-const Item = ({id, name, img, price, stock}) =>{
+const Item = ({id, prod, img, price, stock}) =>{
     return(
         <article className="CardItem">
             <header className="header">
                 <h2 className="IteamHeader">
-                    {name}
+                    {prod}
                 </h2>
             </header>
 
             <picture>
-                <img src={img} alt= {name} className="ItemImg"/>
+                <img src={img} alt= {prod} className="ItemImg"/>
             </picture>
 
             <section>
@@ -25,7 +25,7 @@ const Item = ({id, name, img, price, stock}) =>{
             </section>
 
             <footer className="ItemFooter">
-                <button className="Option">ver detalle</button>
+                <link to= {`/item/${id}`} className="Option">Ver detalle</link>
             </footer>
         </article>
     )
